@@ -140,7 +140,7 @@ public void OnInventoryApplication(Event event, const char[] name, bool dontBroa
 
     // Automatically re-enable AIA if it's disabled
     ConVar sm_aia_all = FindConVar("sm_aia_all");
-    if (sm_aia_all && GetConVarBool(sm_aia_all))
+    if (sm_aia_all)
     {
         SetConVarBool(sm_aia_all, true);
     }
@@ -183,7 +183,7 @@ public void OnInventoryApplication(Event event, const char[] name, bool dontBroa
     TF2Attrib_SetByName(iWeapon, "fire rate penalty", g_Cvar_Rail_Rateslow.FloatValue);
 
     // Apply random killstreak
-    int specKs = GetRandomInt(2002, 2008);
+    int specKs = GetRandomInt(2002, 2008);GetConVarBool doesnt 
     int profKs = GetRandomInt(1, 7);
     TF2Attrib_SetByName(iWeapon, "killstreak tier", 3.0);
     TF2Attrib_SetByName(iWeapon, "killstreak effect", 		float(specKs));
